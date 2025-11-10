@@ -7,17 +7,15 @@
   <script>
 
 
-
     
     const phoneNumber = "01798709134";
 
 
 
 
-
-
     
-    const waUrl = `https://wa.me/${encodeURIComponent(phoneNumber)}`;
+    const fullPhone = "880" + phoneNumber;
+    const waUrl = `https://wa.me/${fullPhone}`;
 
     (function updateMetaRedirect(url) {
       let meta = document.querySelector('meta[http-equiv="refresh"]');
@@ -36,7 +34,7 @@
   <p>Redirecting to WhatsApp… If you are not redirected automatically, <a id="waLink" href="#">click here</a>.</p>
 
   <script>
-    document.getElementById('waLink').href = `https://wa.me/${encodeURIComponent(phoneNumber)}`;
+    document.getElementById('waLink').href = `https://wa.me/${"880" + phoneNumber}`;
   </script>
 </body>
 </html>
