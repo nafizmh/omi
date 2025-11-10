@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=https://wa.me/1234567890" />
-  <script>
-    window.location.href = "https://wa.me/1234567890";
-  </script>
+  <meta charset="utf-8" />
   <title>Redirecting to WhatsApp...</title>
+  <meta http-equiv="refresh" content="0; url=https://wa.me/" />
+  <script>
+
+
+
+    
+    const phoneNumber = "01798709134";
+
+
+
+
+
+
+    
+    const waUrl = `https://wa.me/${encodeURIComponent(phoneNumber)}`;
+
+    (function updateMetaRedirect(url) {
+      let meta = document.querySelector('meta[http-equiv="refresh"]');
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('http-equiv', 'refresh');
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', `0; url=${url}`);
+    })(waUrl);
+
+    window.location.replace(waUrl);
+  </script>
 </head>
 <body>
-  <p>Redirecting to WhatsApp...</p>
+  <p>Redirecting to WhatsApp… If you are not redirected automatically, <a id="waLink" href="#">click here</a>.</p>
+
+  <script>
+    document.getElementById('waLink').href = `https://wa.me/${encodeURIComponent(phoneNumber)}`;
+  </script>
 </body>
 </html>
